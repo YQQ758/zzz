@@ -15,8 +15,22 @@ const adminLogin=(data)=>{
         data
     })
 }
-
+const adCatePage=(data)=>{
+    return instance.request({
+     url:'api/adcate/page',
+     method:'post',
+     data
+    })
+ }
+const adCateDelId=(params)=>{
+    return instance.request({
+        url:'api/adcate/delete',
+        params
+    })
+}
 export {
     userLogin,
-    adminLogin
+    adminLogin,
+    adCatePage,
+    adCateDelId
 } 

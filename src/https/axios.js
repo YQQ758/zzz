@@ -1,4 +1,5 @@
 import axios from "axios";
+//import {showLoading,hideLoading } from '@/utils/eloading'
 //创建axios实例
 const instance = axios.create({
     baseURL: 'http://api.jqrjq.cn/',
@@ -6,6 +7,12 @@ const instance = axios.create({
 })
 //请求拦截器
 instance.interceptors.request.use((config) => {
+    //config.headers.token="";
+    const userStore=useUserstore();
+    const {token}=userStore;
+    console.log(token);
+    //config.headers.token=token;
+
     return config
 }, (error) => {
     return Promise.reject(error)

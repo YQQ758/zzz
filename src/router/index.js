@@ -10,6 +10,7 @@ const routes = [
   { path: '/index', redirect: '/' },
   { path: '/user', name: 'user', component: User, meta: { title: 'user页面', Auth: true } },
   { path: '/user/:id(\\d+)', name: 'userId', component: User, props: true },
+  { path: '/adcate', name: 'adCate', component: () => import('../views/static/adCate.vue') },
   { path: '/login', name: 'login', component: () => import('../views/static/login.vue') },
   { path: '/object', name: 'object', component: () => import('../views/static/object.vue'), children: [{ path: '', name: 'objectinfo', component: Info }, { path: 'login', component: import('@/views/static/login.vue') }] },
   { path: '/shops', name: 'shops', component: () => import('../views/static/shop.vue') },
